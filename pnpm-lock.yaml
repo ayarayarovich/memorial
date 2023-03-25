@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   bootstrap: ^5.2.3
+  droppy-menu: ^1.1.1
   normalize.css: ^8.0.1
   sass: ^1.60.0
   swiper: ^9.1.1
@@ -9,6 +10,7 @@ specifiers:
 
 dependencies:
   bootstrap: 5.2.3
+  droppy-menu: 1.1.1
   normalize.css: 8.0.1
   swiper: 9.1.1
 
@@ -257,6 +259,12 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /droppy-menu/1.1.1:
+    resolution: {integrity: sha512-y4J8dOkqhkTE0XijExr5u0SBCDKsgYfRRkBmvUBswNIsvbQFMHVAkEROJih8+ngHumHte3N4hdbitnESUqu3Qw==}
+    dependencies:
+      tiny-emitter: 2.1.0
+    dev: false
+
   /esbuild/0.17.13:
     resolution: {integrity: sha512-4ixMwdErBcQHgTBeoxnowENCPKWFAGxgTyKHMK8gqn9sZaC7ZNWFKtim16g2rzQ2b/FYyy3lIUUJboFtjolhqg==}
     engines: {node: '>=12'}
@@ -444,6 +452,10 @@ packages:
     engines: {node: '>= 4.7.0'}
     dependencies:
       ssr-window: 4.0.2
+    dev: false
+
+  /tiny-emitter/2.1.0:
+    resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
     dev: false
 
   /to-regex-range/5.0.1:

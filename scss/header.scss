@@ -2,6 +2,8 @@
   padding-block: 1rem;
   border-bottom: 2px solid rgba(#C1AF99, 0.5);
   backdrop-filter: blur(1rem);
+  z-index: 999;
+  position: relative;
 
   a:hover {
     border-bottom: 2px solid rgba(#C1AF99, 0.5);
@@ -26,6 +28,43 @@
   &__menu {
     display: flex;
     gap: 1rem;
+  }
+
+  //&__menu > li {
+  //  position: relative;
+  //}
+  //
+  //.dropdown-toggle {
+  //  position: relative;
+  //}
+  //
+  //.dropdown {
+  //  position: absolute;
+  //  //display: flex;
+  //  min-width: 100%;
+  //  background-color: green;
+  //  padding-inline: 1rem;
+  //  //flex-direction: column;
+  //  //align-items: start;
+  //}
+  //
+  //li {
+  //  display: block;
+  //}
+
+  .dropdown-menu li > ul {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: darkred;
+    padding: 1em;
+    border-radius: 0.5em;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    z-index: 999;
   }
 
 }
