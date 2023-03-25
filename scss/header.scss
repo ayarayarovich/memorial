@@ -1,6 +1,11 @@
 .navbar {
   padding-block: 1rem;
   border-bottom: 2px solid rgba(#C1AF99, 0.5);
+  backdrop-filter: blur(1rem);
+
+  a:hover {
+    border-bottom: 2px solid rgba(#C1AF99, 0.5);
+  }
 
   &__inner {
     display: flex;
@@ -59,14 +64,14 @@
 
 .hero {
   &__inner {
-    padding: 11rem;
+    padding-block: 11rem;
   }
   &__heading {
     margin-bottom: 2rem;
   }
   &__subheading {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 4rem;
   }

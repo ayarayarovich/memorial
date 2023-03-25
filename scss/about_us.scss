@@ -1,0 +1,17 @@
+.about-us {
+  h2 {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .swiper {
+    height: auto;
+    width: auto;
+  }
+
+  img {
+    height: inherit;
+    width: inherit;
+    object-fit: contain;
+  }
+}

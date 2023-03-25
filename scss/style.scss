@@ -2,6 +2,14 @@
 @import "bootstrap/scss/bootstrap-grid";
 
 @import "header";
+@import "features";
+@import "exclusive_works";
+@import "about_us.scss";
+
+body {
+  // TODO: delete
+  padding-bottom: 10rem;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -10,8 +18,11 @@
 
   color-scheme: light dark;
   color: #ffffff;
+  --bs-body-color: #fff;
   --bs-body-bg: #1B1714;
   --bs-body-font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bs-link-color: #fff;
+  --bs-link-hover-color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -40,16 +51,9 @@ a i > * {
   fill: currentColor;
 }
 
-a:hover {
-  color: #ffffff;
-  border-bottom: 2px solid rgba(#C1AF99, 0.5);
-}
-
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.2em;
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  color: #9F8360;
+  color: #fff;
 }
 
 .action-button {
@@ -58,12 +62,12 @@ h1 {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #9F8360;
+  background-color: #BE1919;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 .action-button:hover {
-  background-color: #8c7354;
+  background-color: #801111;
 }
 button:focus,
 button:focus-visible {

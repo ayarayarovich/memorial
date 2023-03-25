@@ -19,12 +19,6 @@ export function setupHeaderSlider() {
             disableOnInteraction: false
         },
 
-        // If we need pagination
-        pagination: {
-            el: '.header .swiper-pagination',
-        },
-
-        // Navigation arrows
         navigation: {
             nextEl: '.header .swiper-button-next',
             prevEl: '.header .swiper-button-prev',
