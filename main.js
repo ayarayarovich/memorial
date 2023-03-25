@@ -6,6 +6,14 @@ import { setupAboutUsSlider } from "./aboutUsSlider.js";
 import { setupNavigation } from "./navigationDropdown.js";
 
 
-setupNavigation()
-setupHeaderSlider()
-setupAboutUsSlider()
+try {
+    setupNavigation()
+} catch (ignore) {}
+
+try {
+    setupHeaderSlider()
+} catch (ignore) {}
+
+try {
+    setupAboutUsSlider()
+} catch (ignore) {}
