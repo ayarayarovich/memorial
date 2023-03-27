@@ -49,9 +49,11 @@ section.form .controls {
     background-color: darkred;
   }
 
-  .input-wrap:has(input:focus):has(input:valid):after {
+  .input-wrap:has(input:valid):after {
     background-color: greenyellow;
   }
+
+
 
 }
 
