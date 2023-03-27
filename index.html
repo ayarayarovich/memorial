@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
 
-    <script type="module" crossorigin src="/assets/main-6af4a283.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/common-7e6119dc.js">
-    <link rel="stylesheet" href="/assets/common-fec259cf.css">
+    <script type="module" crossorigin src="/assets/main-6bc05c69.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/common-4ec05799.js">
+    <link rel="stylesheet" href="/assets/common-b31e0227.css">
   </head>
   <body>
     <header class="header">
@@ -236,6 +236,30 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="form">
+        <form action="http://213.189.201.225:8000/rest/leads/" method="post">
+        <div class="container">
+            <div class="row align-items-center with_fancy_border_left">
+                <div class="col-12 col-lg-8">
+                    <h2>Остались вопросы?</h2>
+                    <div class="controls">
+                        <div class="input-wrap">
+                            <input name="fio" type="text" required placeholder="Ваше имя" class="name">
+                        </div>
+                        <div class="input-wrap">
+                            <input name="number" type="text" required placeholder="Ваш телефон" pattern="\+7\d{10}" class="phone">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 text-center">
+                    <input class="action-button" type="submit" value="Заказать консультацию"/>
+                </div>
+            </div>
+        </div>
+        </form>
+
     </section>
 
     
