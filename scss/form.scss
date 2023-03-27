@@ -8,12 +8,12 @@ section.form .controls {
     border: none;
     z-index: 1;
     outline: none;
-    color: #C1AF99;
+    color: #C1AF99 !important;
     font-weight: 600;
     width: 100%;
 
     &::placeholder {
-      color: #C1AF99;
+      color: #C1AF99 !important;
     }
 
     &:focus,
@@ -45,11 +45,11 @@ section.form .controls {
     height: 100%;
   }
 
-  .input-wrap:has(input:invalid):after {
+  .input-wrap:has(input:focus):has(input:invalid):after {
     background-color: darkred;
   }
 
-  .input-wrap:has(input:valid):after {
+  .input-wrap:has(input:focus):has(input:valid):after {
     background-color: greenyellow;
   }
 

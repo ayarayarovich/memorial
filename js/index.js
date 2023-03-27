@@ -1,4 +1,6 @@
 import Swiper, {Autoplay, Keyboard, Navigation, Pagination} from 'swiper';
+import axios from "axios"
+import qs from 'qs'
 
 function swapBackground(swiperInstance) {
     const bgUrl = swiperInstance.slides[swiperInstance.realIndex].dataset.backgroundUrl
@@ -8,7 +10,7 @@ function swapBackground(swiperInstance) {
     `
 }
 
-export function setupHeaderSlider() {
+function setupHeaderSlider() {
     const swiper = new Swiper('.header .swiper', {
         // configure Swiper to use modules
         modules: [Navigation, Pagination, Keyboard, Autoplay],
@@ -33,7 +35,7 @@ export function setupHeaderSlider() {
     })
 }
 
-export function setupAboutUsSlider() {
+function setupAboutUsSlider() {
     const swiper = new Swiper('.about-us .swiper', {
         // configure Swiper to use modules
         modules: [Navigation, Autoplay],
@@ -52,27 +54,43 @@ export function setupAboutUsSlider() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function setupForm() {
+    const form = document.querySelector('section.form form')
+    form.addEventListener('submit', (e) => {
 
-    document.querySelector('section.form form').addEventListener('submit', (e) => {
-        e.preventDefault()
+        const postUrl = e.target.getAttribute('action')
+        const data = new FormData(e.target)
+        const values = Object.fromEntries(data.entries())
 
         const submitButton = document.querySelector('section.form form .action-button')
-
         const save = {
             style: {
                 backgroundColor: submitButton.style.backgroundColor,
             },
             value: submitButton.value
         }
-        submitButton.style.backgroundColor = 'greenyellow'
-        submitButton.value = 'Успешно!'
+        axios.post(postUrl, qs.stringify(values))
+            .then(() => {
+
+                    submitButton.style.backgroundColor = 'greenyellow'
+                    submitButton.value = 'Успешно!'
+                }
+            )
+            .catch(() => {
+                submitButton.value = 'Не удалось отправить'
+            })
+
 
         setTimeout(() => {
             Object.assign(submitButton, save)
         }, 1000)
-    })
 
+        e.preventDefault()
+    })
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupForm()
     setupHeaderSlider()
     setupAboutUsSlider()
 })
