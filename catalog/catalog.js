@@ -1,5 +1,6 @@
-import {get_products} from "./products.js";
+import {get_products, get_catalogs} from "./products.js";
 
 window.addEventListener('DOMContentLoaded', () => {
-    get_products()
+    get_catalogs();
+    get_products();
 })
