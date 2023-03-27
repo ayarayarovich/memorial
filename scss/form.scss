@@ -1,0 +1,60 @@
+section.form .controls {
+  display: flex;
+  gap: 2em;
+
+  input {
+    padding: 0.5em 1em;
+    background: none;
+    border: none;
+    z-index: 1;
+    outline: none;
+    color: #C1AF99;
+    font-weight: 600;
+    width: 100%;
+
+    &::placeholder {
+      color: #C1AF99;
+    }
+
+    &:focus,
+    &:focus::placeholder {
+      color: #15110F;
+    }
+  }
+
+  .input-wrap {
+    position: relative;
+    flex-grow: 1;
+    z-index: 0;
+  }
+
+  .input-wrap::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #C1AF99;
+    transition: all 0.2s ease;
+    z-index: -1;
+  }
+
+  .input-wrap:has(input:focus):after {
+    height: 100%;
+  }
+
+  .input-wrap:has(input:invalid):after {
+    background-color: darkred;
+  }
+
+  .input-wrap:has(input:valid):after {
+    background-color: greenyellow;
+  }
+
+}
+
+.with_fancy_border_left {
+  border-left: 2px solid #C1AF99;
+}

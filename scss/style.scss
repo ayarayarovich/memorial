@@ -1,11 +1,13 @@
 @import "bootstrap/scss/bootstrap-reboot";
 @import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/bootstrap-utilities";
 
 @import "header";
 @import "features";
 @import "about_us.scss";
 
 @import "catalog";
+@import "form";
 
 body {
   // TODO: delete
@@ -56,7 +58,12 @@ a i > * {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
+  margin-bottom: 0.7em;
   color: #fff;
+}
+
+section, footer {
+  margin-top: 4rem;
 }
 
 .action-button {
@@ -68,6 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #BE1919;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  border: none;
 }
 
 .action-button:hover {

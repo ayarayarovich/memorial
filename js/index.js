@@ -53,6 +53,26 @@ export function setupAboutUsSlider() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    document.querySelector('section.form form').addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        const submitButton = document.querySelector('section.form form .action-button')
+
+        const save = {
+            style: {
+                backgroundColor: submitButton.style.backgroundColor,
+            },
+            value: submitButton.value
+        }
+        submitButton.style.backgroundColor = 'greenyellow'
+        submitButton.value = 'Успешно!'
+
+        setTimeout(() => {
+            Object.assign(submitButton, save)
+        }, 1000)
+    })
+
     setupHeaderSlider()
     setupAboutUsSlider()
 })

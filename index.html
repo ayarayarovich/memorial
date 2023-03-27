@@ -235,6 +235,30 @@
       </div>
     </section>
 
+    <section class="form">
+        <form action="http://213.189.201.225:8000/rest/leads/" method="post">
+        <div class="container">
+            <div class="row align-items-center with_fancy_border_left">
+                <div class="col-12 col-lg-8">
+                    <h2>Остались вопросы?</h2>
+                    <div class="controls">
+                        <div class="input-wrap">
+                            <input name="fio" type="text" required placeholder="Ваше имя" class="name">
+                        </div>
+                        <div class="input-wrap">
+                            <input name="number" type="text" required placeholder="Ваш телефон" pattern="\+7\d{10}" class="phone">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 text-center">
+                    <input class="action-button" type="submit" value="Заказать консультацию"/>
+                </div>
+            </div>
+        </div>
+        </form>
+
+    </section>
+
     <script type="module" src="/js/index.js"></script>
     <script type="module" src="/js/common.js"></script>
   </body>
