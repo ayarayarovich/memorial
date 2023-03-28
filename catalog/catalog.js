@@ -10,7 +10,7 @@ async function get_products(category) {
         let data = await response.json();
         for (let i in data) {
             const item = data[i];
-            const el = `<div class="product col-12 col-sm-6 col-md-4">
+            const el = `<div class="product col-12 col-sm-6 col-xl-4">
                         <a href="/product/?id=${item.id}">
                             <div class="product-card">
                               <img src="${item.image}"
