@@ -111,6 +111,61 @@ function renderNavigation() {
     return c.firstElementChild
 }
 
+
+
+function renderFooter() {
+    const c = document.createElement('div')
+    c.innerHTML = `
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg col-md footer__column">
+                <a class="footer__logo" href="/">
+                  <img src="/logo.png" alt="Памятники на заказ">
+                </a>
+                <a href="tel:+79661744333">
+                  +7 (966) 174-43-33
+                </a>
+              </div>
+    
+              <div class="col-12 col-lg col-md footer__column">
+                <a href="#">Памятники</a>
+                <a href="#">Мемориальные комплексы</a>
+                <a href="#">Эксклюзивные работы</a>
+              </div>
+    
+              <div class="col-12 col-lg col-md footer__column">
+                <a href="/about-us/">О нас</a>
+                <a href="/works/">Наши проекты</a>
+                <a href="/blog/">Статьи</a>
+              </div>
+    
+              <div class="col-12 col-lg col-md footer__column">
+                <a href="/payment/">Оплата и доставка Гранитных памятников</a>
+                <a href="/warranty/">Гарантии на Гранитные памятники</a>
+                <a href="/faq/">Вопросы и ответы о Гранитных памятниках</a>
+              </div>
+    
+              <div class="col-12 col-lg col-md footer__column">
+                <a href="/about-us/">О компании</a>
+                <a href="/awards/">Сертификаты и награды Компании «Памятники на заказ»</a>
+                <a href="/reviews/">Отзывы</a>
+                <a href="/contacts/">Контакты компании «Памятники на заказ»</a>
+              </div>
+    
+            </div>
+          </div>
+        </footer>
+    `
+    return c.firstElementChild
+}
+
+function setupFooter() {
+    document.querySelector('body').append(renderFooter())
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     setupNavigation()
+    setupFooter()
 })

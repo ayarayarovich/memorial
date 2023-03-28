@@ -9,11 +9,7 @@
 @import "catalog";
 @import "product";
 @import "form";
-
-body {
-  // TODO: delete
-  padding-bottom: 10rem;
-}
+@import "footer";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

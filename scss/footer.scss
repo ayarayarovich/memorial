@@ -1,0 +1,21 @@
+.footer {
+  border-top: 2px solid rgba(#C1AF99, 0.5);
+  padding-block: 2rem;
+
+  &__logo {
+    height: 3rem;
+
+    img {
+      height: inherit;
+    }
+  }
+
+  .footer__column > * {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .footer__column > *:last-child {
+    margin-bottom: 0;
+  }
+}
