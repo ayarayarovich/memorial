@@ -9,9 +9,43 @@ import Droppy from "droppy-menu";
 
 function setupNavigation() {
 
-    const navbar = renderNavigation()
+    const navbarWrapper = renderNavigation()
 
-    const dropdownMenuEl = navbar.querySelector('.dropdown-menu')
+    const hamburger = navbarWrapper.querySelector('.hamburger')
+    const navbar = navbarWrapper.querySelector('.navbar')
+    const navbarInner = navbar.querySelector('.navbar__inner')
+
+    navbarInner.addEventListener('click', (e) => {
+        // intercept click event so side menu won't close if user clicked on dropdown
+        e.stopPropagation()
+    })
+
+    const showNavbar = () => {
+        document.body.style.height = '100dvh'
+        document.body.style.overflow = 'hidden'
+        navbar.classList.add('navbar--shown')
+    }
+
+    const hideNavbar = () => {
+        document.body.style.height = ''
+        document.body.style.overflow = ''
+        navbar.classList.remove('navbar--shown')
+    }
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation()
+
+        if (navbar.classList.contains('navbar--shown'))
+            hideNavbar()
+        else
+            showNavbar()
+
+    })
+    navbarWrapper.addEventListener('click', (e) => {
+        hideNavbar()
+    })
+
+    const dropdownMenuEl = navbarWrapper.querySelector('.dropdown-menu')
     dropdownMenuEl.querySelector('li > ul').classList.add('animate__animated', 'animate__superfast')
     const droppy = new Droppy(dropdownMenuEl, {
         parentSelector: 'li',
@@ -36,9 +70,11 @@ function setupNavigation() {
         droppy.open(droppyDropEl)
     })
     dropdownMenuEl.addEventListener('mouseleave', () => {
-        closeIfNoInteraction = setTimeout(() => {
-            droppy.close(droppyDropEl)
-        }, 1000)
+        clearTimeout(closeIfNoInteraction)
+        droppy.close(droppyDropEl)
+    })
+    dropdownMenuEl.addEventListener('focusout', () => {
+
     })
     droppyDropEl.addEventListener('mouseover', () => {
         clearTimeout(closeIfNoInteraction)
@@ -47,27 +83,33 @@ function setupNavigation() {
         clearTimeout(closeIfNoInteraction)
         droppy.close(droppyDropEl)
     })
+    droppyDropEl.addEventListener('focusout', () => {
+        clearTimeout(closeIfNoInteraction)
+        droppy.close(droppyDropEl)
+    })
 
-    document.querySelector('header.header').prepend(navbar)
+    document.querySelector('header.header').prepend(navbarWrapper)
 }
 
 
 function renderNavigation() {
     const c = document.createElement('div')
     c.innerHTML = `
+        <div class="navbar-wrapper">
+        <div class="hamburger"></div>
         <nav class="navbar">
-        <div class="container">
-          <div class="navbar__inner flex-column flex-md-row">
-            <a class="navbar__logo mb-4 mb-lg-0" href="/">
-              <img src="/logo.png" alt="Памятники на заказ">
-            </a>
+        <div class="container h-100">
+          <div class="navbar__inner flex-column h-100 flex-lg-row justify-content-lg-between">
+                <a class="navbar__logo mb-4 mb-lg-0" href="/">
+                  <img src="/logo.png" alt="Памятники на заказ">
+                </a>
 
-                <ul class="navbar__menu mb-4 mb-lg-0">
+                <ul class="navbar__menu mb-4 mb-lg-0 flex-column flex-grow-1 flex-lg-grow-0 flex-lg-row">
                     <li>
-                        <a href="/catalog/">Каталог</a>
+                        <a href="/">Главная</a>
                     </li>
                     <li>
-                        <a href="/about-us/">О нас</a>
+                        <a href="/catalog/">Каталог</a>
                     </li>
                     <li>
                         <a href="/works/">Работы</a>
@@ -86,11 +128,8 @@ function renderNavigation() {
                                     <ul class="menu"> <!-- The drop-down selector "li > ul" -->
                                         <li><a href="/about-us/">О компании</a></li>
                                         <li><a href="/payment/">Оплата и доставка</a></li>
-                                        <li><a href="/awards/">Сертификаты и награды</a></li>
-                                        <li><a href="/blog/">Статьи</a></li>
+                                        <li><a href="/awards/" style="display: none">Сертификаты и награды</a></li>
                                         <li><a href="/warranty/">Гарантии</a></li>
-                                        <li><a href="/reviews/">Отзывы</a></li>
-                                        <li><a href="/faq/">FAQ</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -107,6 +146,8 @@ function renderNavigation() {
           </div>
         </div>
       </nav>
+</div>
+      
     `
     return c.firstElementChild
 }
@@ -135,21 +176,16 @@ function renderFooter() {
               </div>
     
               <div class="col-12 col-lg col-md footer__column">
-                <a href="/about-us/">О нас</a>
                 <a href="/works/">Наши проекты</a>
-                <a href="/blog/">Статьи</a>
               </div>
     
               <div class="col-12 col-lg col-md footer__column">
                 <a href="/payment/">Оплата и доставка Гранитных памятников</a>
                 <a href="/warranty/">Гарантии на Гранитные памятники</a>
-                <a href="/faq/">Вопросы и ответы о Гранитных памятниках</a>
               </div>
     
               <div class="col-12 col-lg col-md footer__column">
-                <a href="/about-us/">О компании</a>
-                <a href="/awards/">Сертификаты и награды Компании «Памятники на заказ»</a>
-                <a href="/reviews/">Отзывы</a>
+                <a href="/awards/" style="display: none">Сертификаты и награды Компании «Памятники на заказ»</a>
                 <a href="/contacts/">Контакты компании «Памятники на заказ»</a>
               </div>
     
