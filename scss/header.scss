@@ -35,6 +35,10 @@
       padding-block: 1em;
     }
 
+    li > ul {
+      display: none;
+    }
+
     > li > a,
     .droppy__trigger {
       padding-inline: 1em;
