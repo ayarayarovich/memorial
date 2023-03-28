@@ -1,12 +1,16 @@
 
 .contacts-title {
   color: #fff;
-  margin: 5px 0;
-  font-size: 1.2em;
+  margin-bottom: 0.4rem;
+  font-size: 1.4em;
+}
+
+.contact {
+  margin-bottom: 1.2rem;
 }
 
 .contact-val {
-  margin-bottom: 40px;
+  font-size: 1.2em;
 }
 
 .contacts-soc {
@@ -21,5 +25,17 @@
 
 .contacts-soc svg {
   margin: 0 6px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
+}
+
+
+.map iframe {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .contacts {
+    margin-bottom: 2rem;
+  }
 }
