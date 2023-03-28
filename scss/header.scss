@@ -75,7 +75,10 @@
     > li,
     > li > a,
     .droppy__trigger {
-      padding-block: 2em;
+      padding-block: 1em;
+      @include media-breakpoint-up(lg) {
+        padding-block: 2em;
+      }
     }
 
     //force !important
