@@ -61,20 +61,20 @@ function setupNavigation() {
 
     const droppyDropEl = dropdownMenuEl.querySelector('.droppy__drop')
 
-
-
     let closeIfNoInteraction = null
-
     dropdownMenuEl.addEventListener('mouseover', () => {
         clearTimeout(closeIfNoInteraction)
         droppy.open(droppyDropEl)
     })
     dropdownMenuEl.addEventListener('mouseleave', () => {
-        clearTimeout(closeIfNoInteraction)
-        droppy.close(droppyDropEl)
+        closeIfNoInteraction = setTimeout(() => {
+            droppy.close(droppyDropEl)
+        }, 1000)
     })
     dropdownMenuEl.addEventListener('focusout', () => {
-
+        closeIfNoInteraction = setTimeout(() => {
+            droppy.close(droppyDropEl)
+        }, 1000)
     })
     droppyDropEl.addEventListener('mouseover', () => {
         clearTimeout(closeIfNoInteraction)
@@ -87,6 +87,7 @@ function setupNavigation() {
         clearTimeout(closeIfNoInteraction)
         droppy.close(droppyDropEl)
     })
+
 
     document.querySelector('header.header').prepend(navbarWrapper)
 }
@@ -126,7 +127,6 @@ function renderNavigation() {
                                     </i>
                                     </a> <!-- The trigger selector "a" -->
                                     <ul class="menu"> <!-- The drop-down selector "li > ul" -->
-                                        <li><a href="/about-us/">О компании</a></li>
                                         <li><a href="/payment/">Оплата и доставка</a></li>
                                         <li><a href="/awards/" style="display: none">Сертификаты и награды</a></li>
                                         <li><a href="/warranty/">Гарантии</a></li>
@@ -149,6 +149,7 @@ function renderNavigation() {
 </div>
       
     `
+
     return c.firstElementChild
 }
 

@@ -30,7 +30,8 @@
 }
 .navbar {
   border-bottom: 2px solid rgba(#C1AF99, 0.5);
-  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
   position: relative;
 
   @include media-breakpoint-down(lg) {
@@ -78,15 +79,17 @@
     > li,
     > li > a,
     .droppy__trigger {
-      padding-block: 1em;
-      @include media-breakpoint-up(lg) {
-        padding-block: 2em;
-      }
+      padding-block: 1.5em;
     }
 
     //force !important
     .droppy__drop--active {
       display: block !important;
+    }
+
+    .droppy__drop > li {
+      width: max-content;
+      max-width: 100%;
     }
 
     li > ul {
@@ -108,7 +111,7 @@
 
   .dropdown-menu li > ul {
     position: absolute;
-    top: 200%;
+    top: 3.5rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: #BE1919;
