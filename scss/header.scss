@@ -70,6 +70,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  background: rgba(27, 23, 20, 0.8);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   @include media-breakpoint-up(lg) {
@@ -80,6 +81,7 @@
 
 .navbar {
   border-bottom: 2px solid rgba(#C1AF99, 0.5);
+  background: rgba(27, 23, 20, 0.8);
   -webkit-backdrop-filter: blur(1rem);
           backdrop-filter: blur(1rem);
   position: relative;
