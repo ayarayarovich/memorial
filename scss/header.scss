@@ -11,6 +11,13 @@
     display: flex;
   }
 }
+
+@include media-breakpoint-down(lg) {
+  body {
+    padding-top: 5rem;
+  }
+}
+
 .sidebar_toggler span {
   background-color: #ddd;
   width: 100%;

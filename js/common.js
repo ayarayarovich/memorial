@@ -72,9 +72,8 @@ function setupNavigation() {
         }, 1000)
     })
     dropdownMenuEl.addEventListener('focusout', () => {
-        closeIfNoInteraction = setTimeout(() => {
-            droppy.close(droppyDropEl)
-        }, 1000)
+        clearTimeout(closeIfNoInteraction)
+        droppy.close(droppyDropEl)
     })
     droppyDropEl.addEventListener('mouseover', () => {
         clearTimeout(closeIfNoInteraction)
