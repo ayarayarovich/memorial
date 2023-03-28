@@ -35,6 +35,17 @@
       padding-block: 1em;
     }
 
+    //force !important
+    .droppy__drop--active {
+      display: block !important;
+    }
+
+    li > ul {
+      display: none;
+    }
+
+
+
     > li > a,
     .droppy__trigger {
       padding-inline: 1em;
