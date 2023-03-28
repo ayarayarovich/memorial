@@ -141,7 +141,7 @@ function renderNavigation() {
                 </ul>
 
             <a class="navbar__whatsapp mb-4 mb-lg-0" href="https://wa.me/+79265453632">
-              <img src="/whatsapp.png" alt="">
+              <img src="/whatsapp.svg" style="height: 2.5em" alt="">
             </a>
           </div>
         </div>
