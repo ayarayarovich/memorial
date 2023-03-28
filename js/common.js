@@ -174,9 +174,7 @@ function renderFooter() {
                 <a class="footer__logo" href="/">
                   <img src="/logo.png" alt="Памятники на заказ">
                 </a>
-                <a href="tel:+79661744333">
-                  +7 (966) 174-43-33
-                </a>
+                <a href="tel:+79181396538">+7(918) 139-65-38</a>
               </div>
     
               <div class="col-12 col-lg col-md footer__column">
