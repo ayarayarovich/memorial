@@ -67,6 +67,10 @@ section, footer {
   margin-top: 4rem;
 }
 
+.animate__superfast {
+  --animate-duration: 0.2s;
+}
+
 .action-button {
   border-radius: 8px;
   padding: 0.6em 1.2em;
