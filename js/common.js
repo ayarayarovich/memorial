@@ -47,6 +47,9 @@ function setupNavigation() {
 
     const dropdownMenuEl = navbarWrapper.querySelector('.dropdown-menu')
     dropdownMenuEl.querySelector('li > ul').classList.add('animate__animated', 'animate__superfast')
+
+    let isDroppyOpen = false
+
     const droppy = new Droppy(dropdownMenuEl, {
         parentSelector: 'li',
         dropdownSelector: 'li > ul',
@@ -57,15 +60,38 @@ function setupNavigation() {
         preventDefault: true,
         animationIn: 'animate__fadeIn',
         animationOut: 'animate__fadeOut',
+    },
+    {
+        afterOpen: () => {
+            console.log('droppy is open')
+            isDroppyOpen = true
+        },
+        afterClose: () => {
+            console.log('droppy is closed')
+            isDroppyOpen = false
+        }
     })
 
     const droppyDropEl = dropdownMenuEl.querySelector('.droppy__drop')
 
     let closeIfNoInteraction = null
-    dropdownMenuEl.addEventListener('mouseover', () => {
-        clearTimeout(closeIfNoInteraction)
-        droppy.open(droppyDropEl)
-    })
+
+    // ****
+    if (window.matchMedia('(max-width: 992px)').matches) {
+        dropdownMenuEl.addEventListener('click', () => {
+            clearTimeout(closeIfNoInteraction)
+            if (isDroppyOpen) droppy.close(droppyDropEl)
+            if (!isDroppyOpen) droppy.open(droppyDropEl)
+        })
+    }
+    else {
+        dropdownMenuEl.addEventListener('mouseover', () => {
+            clearTimeout(closeIfNoInteraction)
+            droppy.open(droppyDropEl)
+        })
+    }
+    // ****
+
     dropdownMenuEl.addEventListener('mouseleave', () => {
         closeIfNoInteraction = setTimeout(() => {
             droppy.close(droppyDropEl)
