@@ -29,7 +29,6 @@
   border-bottom: 2px solid rgba(#C1AF99, 0.5);
   backdrop-filter: blur(1rem);
   position: relative;
-  padding-block: 1rem;
 
   @include media-breakpoint-down(lg) {
     position: absolute;
@@ -41,6 +40,8 @@
     border-bottom: none;
     transform: translateX(-100%);
     transition: transform 0.2s ease;
+    padding-block: 1rem;
+
     &.navbar--shown {
       transform: translateX(0);
     }
