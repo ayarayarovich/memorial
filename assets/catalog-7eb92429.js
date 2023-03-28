@@ -1,4 +1,4 @@
-import"./common-addd18e2.js";async function r(t){let o;if(t?o=await fetch(`http://213.189.201.225:8000/rest/filter_products/${t}/`):o=await fetch("http://213.189.201.225:8000/rest/products/"),o.ok){document.querySelector(".products-list").innerHTML="";let e=await o.json();for(let n in e){const c=e[n],a=`<div class="product col-12 col-sm-6 col-xl-4">
+import"./common-8b0710c5.js";async function r(t){let o;if(t?o=await fetch(`http://213.189.201.225:8000/rest/filter_products/${t}/`):o=await fetch("http://213.189.201.225:8000/rest/products/"),o.ok){document.querySelector(".products-list").innerHTML="";let e=await o.json();for(let n in e){const c=e[n],a=`<div class="product col-12 col-sm-6 col-xl-4">
                         <a href="/product/?id=${c.id}">
                             <div class="product-card">
                               <img src="${c.image}"
