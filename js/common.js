@@ -11,7 +11,7 @@ function setupNavigation() {
 
     const navbarWrapper = renderNavigation()
 
-    const hamburger = navbarWrapper.querySelector('.hamburger')
+    const hamburger = navbarWrapper.querySelector('.sidebar_toggler')
     const navbar = navbarWrapper.querySelector('.navbar')
     const navbarInner = navbar.querySelector('.navbar__inner')
 
@@ -97,7 +97,16 @@ function renderNavigation() {
     const c = document.createElement('div')
     c.innerHTML = `
         <div class="navbar-wrapper">
-        <div class="hamburger"></div>
+        <div class="mobile-navbar">
+                <a class="navbar__logo" href="/">
+                  <img src="/logo.png" alt="Памятники на заказ">
+                </a>
+            <div class="sidebar_toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+             </div>
+        </div>
         <nav class="navbar">
         <div class="container h-100">
           <div class="navbar__inner flex-column h-100 flex-lg-row justify-content-lg-between">
