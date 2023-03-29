@@ -19,6 +19,11 @@
 }
 
 .prodPg-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
   padding: 2em;
 }
 
