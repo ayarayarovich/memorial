@@ -49,9 +49,6 @@
   padding-right: 2rem;
 }
 
-.product {
-  margin: 1rem 0;
-}
 
 .product-card {
   height: 100%;
@@ -71,18 +68,22 @@
   margin: 1em;
 }
 
-.product img {
-  width: 100%;
-  height: 16rem;
-  overflow: hidden;
-  border-radius: 1rem;
-  object-fit: cover;
-  transition: 0.6s;
-  cursor: pointer;
-}
+.product {
+  margin: 1rem 0;
 
-.product img:hover {
-  opacity: 0.7;
+  img {
+    width: 100%;
+    height: 16rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    object-fit: cover;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+
+  img:hover {
+    opacity: 0.7;
+  }
 }
 
 .product-link svg {
