@@ -149,7 +149,7 @@ function renderNavigation() {
                     <li>
                         <a href="/works/">Работы</a>
                     </li>
-                    <li>
+                    <li class="dropdown-menu-wrapper">
                         <nav class="dropdown-menu"> <!-- The Droppy's element -->
                             <ul class="menu">
                                 <li> <!-- The parent selector "li" -->
@@ -162,13 +162,16 @@ function renderNavigation() {
                                     </a> <!-- The trigger selector "a" -->
                                     <ul class="menu"> <!-- The drop-down selector "li > ul" -->
                                         <li><a href="/payment/">Оплата и доставка</a></li>
-                                        <li><a href="/awards/" style="display: none">Сертификаты и награды</a></li>
+                                        <li style="display: none"><a href="/awards/">Сертификаты и награды</a></li>
                                         <li><a href="/warranty/">Гарантии</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
                     </li>
+                    <li class="from-dropdown"><a href="/payment/">Оплата и доставка</a></li>
+                    <li class="from-dropdown" style="display: none"><a href="/awards/">Сертификаты и награды</a></li>
+                    <li class="from-dropdown"><a href="/warranty/">Гарантии</a></li>
                     <li>
                         <a href="/contacts/">Контакты</a>
                     </li>

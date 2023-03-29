@@ -128,6 +128,21 @@
     display: flex;
     align-items: center;
 
+    .from-dropdown {
+      display: block;
+    }
+    .dropdown-menu-wrapper {
+      display: none;
+    }
+    @include media-breakpoint-up(lg) {
+      .from-dropdown {
+        display: none;
+      }
+      .dropdown-menu-wrapper {
+        display: block;
+      }
+    }
+
     > li,
     > li > a,
     .droppy__trigger {
