@@ -1,9 +1,9 @@
 async function get_products(category) {
     let response;
     if (category)
-        response = await fetch(`http://213.189.201.225:8000/rest/filter_products/${category}/`);
+        response = await fetch(`https://213.189.201.225:8000/rest/filter_products/${category}/`);
     else
-        response = await fetch(`http://213.189.201.225:8000/rest/products/`);
+        response = await fetch(`https://213.189.201.225:8000/rest/products/`);
 
     if (response.ok) { // если HTTP-статус в диапазоне 200-299
         document.querySelector('.products-list').innerHTML = '';
@@ -40,7 +40,7 @@ function add_category(item) {
 }
 
 async function get_categories() {
-    let response = await fetch("http://213.189.201.225:8000/rest/categories/");
+    let response = await fetch("https://213.189.201.225:8000/rest/categories/");
 
     if (response.ok) {
         document.querySelector('.categories-list').innerHTML = '';
