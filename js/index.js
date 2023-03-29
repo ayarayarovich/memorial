@@ -28,7 +28,6 @@ function setupHeaderSlider() {
         },
     });
 
-    console.log(swiper.slides[swiper.realIndex].dataset)
     swapBackground(swiper)
     swiper.on('slideChange', () => {
         swapBackground(swiper)
